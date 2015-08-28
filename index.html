@@ -15,18 +15,45 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
         <!-- Optional theme -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+        <!-- handlebars -->
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.0/handlebars.min.js"></script>
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
         <!-- Parse app files -->
         <script src="http://www.parsecdn.com/js/parse-1.5.0.min.js"></script>
-        <script src="app.js"></script>
-    </head>
 
+
+
+    </head>
     <body>
+      <nav class="blog-nav">
+        <a class="blog-nav-item active" href="index.html">Home</a>
+        <a class="blog-nav-item" href="admin.html">Admin</a>
+      </nav>
+
+
+
     <h1>The Parse Blog from dieg</h1>
+      <div class="col-sm-8 blog-main">
+        <div class="main-container">
+        </div>
+      </div>
+
+
+      <!-- handlebars templates -->
+      <script id="blog-tpl" type="text/x-handlebars-template">
+        {{#each blog}}
+        <div class="blog-post">
+          <h2 class="blog-post-title"><a href="#">{{title}}</a></h2>
+          <p class="blog-post-meta">At time by an author</p>
+          <div>{{{content}}}</div>
+        </div>
+        {{/each}}
+      </script>
 
 
     </body>
-    <script>
-    </script>
+        <!-- My js code -->
+        <script src="app.js"></script>
+        <script src="admin.js"></script>
 </html>
